@@ -1,11 +1,20 @@
 # BRIE — 高境光理论白皮书
 
-> **Background-Retina Image Environment (BRIE) Hypothesis**
+---
+
+## BRIE 的双重含义
+
+**1. 理论假说**
+> **基线视网膜照度平衡假说 / Baseline Retinal Illumination Equilibrium Hypothesis**
 > 近视是成像光与背景环境光长期失耦合导致的视网膜统计稳态偏移
+
+**2. 干预技术**
+> **本底视网膜照度提升技术 / Baseline Retinal Illumination Elevation (BRIE) Technology**
+> 通过提高环境光比例，恢复ON/OFF通路的1:1平衡状态
 
 ---
 
-## 高境光理论核心框架
+## 核心机制
 
 ```
 环境光不足 → 视锥色素亚稳态噪声 → 虚假ON信号
@@ -13,14 +22,6 @@
 ```
 
 **核心干预**：提高"环境光比例"，恢复ON/OFF 1:1平衡。
-
----
-
-## 文件
-
-| 文件 | 说明 |
-|------|------|
-| `白皮书_学术版_v0.53-RC1.md` | 完整白皮书全文（约250KB） |
 
 ---
 
