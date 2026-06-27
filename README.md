@@ -12,7 +12,7 @@
 
 **1. 理论假说**
 
-> **基线视网膜照度平衡假说 / Baseline Retinal Illumination Equilibrium Hypothesis**
+> **基线视网膜照度平衡假说 / Baseline Retinal Illumination Equilibrium (BRIE) Hypothesis**
 >
 > 近视是成像光与背景环境光长期失耦合导致的视网膜统计稳态偏移
 
