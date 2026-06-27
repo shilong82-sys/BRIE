@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Figure 5: Minimum Validation Loop - Experimental Design Flowchart</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    padding: 40px 30px;
+    width: 1700px;
+    min-height: 900px;
+  }
+  .title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .flowchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .flow-box {
+    border-radius: 10px;
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 260px;
+    border: 2.5px solid;
+    background: #fafafa;
+    position: relative;
+  }
+
+  .box-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .box-detail {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.5;
+  }
+  .box-measure {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1565C0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 2px;
+  }
+
+  /* 类型颜色 */
+  .type-recruit { border-color: #1565C0; background: #e3f2fd; }
+  .type-recruit .box-title { color: #1565C0; }
+  .type-measure { border-color: #2E7D32; background: #e8f5e9; }
+  .type-measure .box-title { color: #2E7D32; }
+  .type-exposure-low { border-color: #E65100; background: #fff3e0; }
+  .type-exposure-low .box-title { color: #E65100; }
+  .type-exposure-high { border-color: #1E88E5; background: #e3f2fd; }
+  .type-exposure-high .box-title { color: #1565C0; }
+  .type-washout { border-color: #9E9E9E; background: #f5f5f5; }
+  .type-washout .box-title { color: #616161; }
+  .type-followup { border-color: #6A1B9A; background: #f3e5f5; }
+  .type-followup .box-title { color: #6A1B9A; }
+  .type-analysis { border-color: #333; background: #eceff1; }
+  .type-analysis .box-title { color: #333; }
+
+  /* 箭头 */
+  .arrow-down {
+    display: flex;
+    justify-content: center;
+    height: 28px;
+  }
+  .arrow-down svg {
+    width: 24px;
+    height: 28px;
+  }
+
+  /* 时间轴 */
+  .timeline {
+    position: relative;
+    width: 90%;
+    margin: 20px auto 0;
+    padding-top: 10px;
+  }
+  .timeline-line {
+    height: 4px;
+    background: linear-gradient(to right, #1565C0, #E65100, #9E9E9E, #1E88E5, #6A1B9A);
+    border-radius: 2px;
+    position: relative;
+  }
+  .timeline-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .timeline-label {
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    flex: 1;
+  }
+  .timeline-label strong {
+    display: block;
+    font-size: 12px;
+    color: #333;
+  }
+
+  /* 指标面板 */
+  .measures-panel {
+    margin-top: 24px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 16px 24px;
+  }
+  .measures-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .measures-grid {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .measure-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 14px;
+    border-left: 4px solid #2E7D32;
+    flex: 1;
+    min-width: 200px;
+  }
+  .measure-card .m-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #2E7D32;
+  }
+  .measure-card .m-desc {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 16px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="title">Figure 5: Minimum Validation Loop — Experimental Design Flowchart</div>
+<div class="subtitle">最小验证闭环实验设计：BRIE假说的核心实验方案</div>
+
+<div class="flowchart">
+
+  <!-- Step 1 -->
+  <div class="flow-box type-recruit">
+    <div class="box-title">📋 受试者招募</div>
+    <div class="box-detail">n=30 | 正视眼 n=15 + 近视眼 n=15<br>年龄 18-35 岁，排除眼部疾病</div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 2 -->
+  <div class="flow-box type-measure">
+    <div class="box-title">📊 基线测量（Day 0）</div>
+    <div class="box-detail">
+      <span class="box-measure">RSBI</span>
+      <span class="box-measure">脉络膜厚度</span>
+      <span class="box-measure">眼轴长度</span>
+      <span class="box-measure">屈光度</span>
+      <span class="box-measure">视力</span>
+    </div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 3 -->
+  <div class="flow-box type-exposure-low">
+    <div class="box-title">🌑 低照度暴露（Day 1–7）</div>
+    <div class="box-detail">100–200 lux | 每天 4 小时 | 连续 7 天<br>模拟典型室内视觉环境</div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 4 -->
+  <div class="flow-box type-measure">
+    <div class="box-title">📊 低照度后测量（Day 8）</div>
+    <div class="box-detail">
+      <span class="box-measure">RSBI</span>
+      <span class="box-measure">脉络膜厚度</span>
+      <span class="box-measure">眼轴长度</span>
+    </div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 5 -->
+  <div class="flow-box type-washout">
+    <div class="box-title">🔄 洗脱期（Day 9–14）</div>
+    <div class="box-detail">恢复正常光环境 500–1000 lux<br>消除低照度暴露的短期效应</div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 6 -->
+  <div class="flow-box type-exposure-high">
+    <div class="box-title">☀️ 高照度暴露（Day 15–21）</div>
+    <div class="box-detail">1000–2000 lux | 每天 4 小时 | 连续 7 天<br>模拟优化的环境光条件</div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 7 -->
+  <div class="flow-box type-measure">
+    <div class="box-title">📊 高照度后测量（Day 22）</div>
+    <div class="box-detail">
+      <span class="box-measure">RSBI</span>
+      <span class="box-measure">脉络膜厚度</span>
+      <span class="box-measure">眼轴长度</span>
+    </div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 8 -->
+  <div class="flow-box type-followup">
+    <div class="box-title">📅 随访（Month 1, 3, 6）</div>
+    <div class="box-detail">
+      <span class="box-measure">眼轴长度</span>
+      <span class="box-measure">屈光度</span>
+    </div>
+  </div>
+
+  <div class="arrow-down"><svg viewBox="0 0 24 28"><path d="M12 2 L12 22 M6 16 L12 22 L18 16" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+
+  <!-- Step 9 -->
+  <div class="flow-box type-analysis">
+    <div class="box-title">📈 数据分析</div>
+    <div class="box-detail">主要指标：RSBI变化、脉络膜厚度变化<br>统计方法：重复测量 ANOVA<br>效应量：Cohen's d（预计 0.6–0.8）</div>
+  </div>
+
+</div>
+
+<!-- 时间轴 -->
+<div class="timeline">
+  <div class="timeline-line"></div>
+  <div class="timeline-labels">
+    <div class="timeline-label"><strong>Day 0</strong>基线</div>
+    <div class="timeline-label"><strong>Day 1-7</strong>低照度</div>
+    <div class="timeline-label"><strong>Day 8</strong>测量</div>
+    <div class="timeline-label"><strong>Day 9-14</strong>洗脱</div>
+    <div class="timeline-label"><strong>Day 15-21</strong>高照度</div>
+    <div class="timeline-label"><strong>Day 22</strong>测量</div>
+    <div class="timeline-label"><strong>M1,3,6</strong>随访</div>
+  </div>
+</div>
+
+<!-- 测量指标面板 -->
+<div class="measures-panel">
+  <div class="measures-title">🔬 核心测量指标说明</div>
+  <div class="measures-grid">
+    <div class="measure-card">
+      <div class="m-name">RSBI（视网膜信号平衡指数）</div>
+      <div class="m-desc">ON/OFF通路振幅比值，正常范围 0.9–1.1（待验证）<br>RETeval设备 + PhNR协议测量</div>
+    </div>
+    <div class="measure-card">
+      <div class="m-name">脉络膜厚度</div>
+      <div class="m-desc">OCT测量中心凹下脉络膜厚度（SFCT）<br>BRIE预测：低照度→变薄，高照度→增厚</div>
+    </div>
+    <div class="measure-card">
+      <div class="m-name">眼轴长度</div>
+      <div class="m-desc">光学生物测量仪（IOLMaster/Lenstar）<br>短期变化量级：~5–15 μm（预期可检测）</div>
+    </div>
+    <div class="measure-card">
+      <div class="m-name">统计可行性</div>
+      <div class="m-desc">n=30 可检测 Cohen's d ≥ 0.6 的效应<br>配对t检验，α=0.05，Power ≥ 0.80</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">This is an exploratory validation protocol. It has not been executed. All parameters are hypothesis-driven estimates, not clinically established values.</div>
+
+</body>
+</html>

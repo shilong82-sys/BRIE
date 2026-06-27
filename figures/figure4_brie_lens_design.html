@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Figure 4: BRIE Lens Design - Microlens Array</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    padding: 40px 30px;
+    width: 1700px;
+    min-height: 900px;
+  }
+  .title { text-align: center; font-size: 22px; font-weight: bold; color: #1a1a1a; margin-bottom: 6px; }
+  .subtitle { text-align: center; font-size: 14px; color: #666; margin-bottom: 30px; }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 0;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .lens-panel {
+    border: 2.5px solid;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  .lens-panel-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  .lens-panel.traditional {
+    border-color: #9E9E9E;
+    background: #fafafa;
+  }
+  .lens-panel.traditional .lens-panel-title { color: #616161; }
+  .lens-panel.brie {
+    border-color: #1565C0;
+    background: #e3f2fd;
+  }
+  .lens-panel.brie .lens-panel-title { color: #1565C0; }
+
+  .vs-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+  }
+
+  /* 光线示意图 */
+  .ray-diagram {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 0;
+  }
+
+  .param-list {
+    text-align: left;
+    margin-top: 12px;
+  }
+  .param-item {
+    font-size: 12px;
+    color: #555;
+    padding: 4px 0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .param-name { font-weight: bold; }
+
+  /* 微透镜阵列放大图 */
+  .detail-section {
+    background: #f5f5f5;
+    border-radius: 14px;
+    padding: 24px;
+    border: 2px solid #e0e0e0;
+    margin-bottom: 20px;
+  }
+  .detail-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #1565C0;
+    padding-bottom: 8px;
+  }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .detail-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px;
+    border: 1.5px solid #ddd;
+    text-align: center;
+  }
+  .detail-card-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1565C0;
+    margin-bottom: 10px;
+  }
+  .detail-card-value {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  }
+  .detail-card-unit {
+    font-size: 11px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .diff-section {
+    margin-top: 20px;
+    padding: 16px;
+    background: #fff3e0;
+    border-radius: 10px;
+    border-left: 4px solid #E65100;
+  }
+  .diff-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #E65100;
+    margin-bottom: 8px;
+  }
+  .diff-text {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  .footer { text-align: center; font-size: 10px; color: #999; margin-top: 16px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="title">Figure 4: BRIE Lens Design — Microlens Array for Retinal Illumination Enhancement</div>
+<div class="subtitle">BRIE镜片设计原理：微米透镜阵列提升视网膜背景照度</div>
+
+<div class="compare-grid">
+  <!-- 传统镜片 -->
+  <div class="lens-panel traditional">
+    <div class="lens-panel-title">🔴 传统单光镜片</div>
+    <div class="ray-diagram">
+      <svg width="320" height="280" viewBox="0 0 320 280">
+        <!-- 镜片 -->
+        <ellipse cx="160" cy="60" rx="100" ry="12" fill="none" stroke="#9E9E9E" stroke-width="3"/>
+        <text x="160" y="40" font-size="11" fill="#9E9E9E" text-anchor="middle" font-weight="bold">传统镜片</text>
+        <!-- 入射光（平行） -->
+        <line x1="60" y1="10" x2="120" y2="50" stroke="#42A5F5" stroke-width="2" stroke-dasharray="6"/>
+        <line x1="160" y1="5" x2="160" y2="48" stroke="#42A5F5" stroke-width="2" stroke-dasharray="6"/>
+        <line x1="260" y1="10" x2="200" y2="50" stroke="#42A5F5" stroke-width="2" stroke-dasharray="6"/>
+        <!-- 出射光（会聚到视网膜） -->
+        <line x1="120" y1="72" x2="160" y2="240" stroke="#42A5F5" stroke-width="2.5"/>
+        <line x1="160" y1="72" x2="160" y2="240" stroke="#42A5F5" stroke-width="2.5"/>
+        <line x1="200" y1="72" x2="160" y2="240" stroke="#42A5F5" stroke-width="2.5"/>
+        <!-- 视网膜 -->
+        <ellipse cx="160" cy="252" rx="40" ry="20" fill="none" stroke="#E65100" stroke-width="2.5"/>
+        <text x="160" y="256" font-size="9" fill="#E65100" text-anchor="middle">视网膜</text>
+        <!-- 标注 -->
+        <text x="280" y="140" font-size="10" fill="#42A5F5" font-weight="bold">成像光</text>
+        <text x="280" y="155" font-size="10" fill="#42A5F5">100%</text>
+        <text x="280" y="170" font-size="9" fill="#999">仅矫正屈光</text>
+        <text x="280" y="185" font-size="9" fill="#999">无环境光增强</text>
+      </svg>
+    </div>
+    <div class="param-list">
+      <div class="param-item"><span class="param-name">功能</span><span>仅矫正屈光不正</span></div>
+      <div class="param-item"><span class="param-name">光线处理</span><span>全部用于成像</span></div>
+      <div class="param-item"><span class="param-name">背景照度</span><span>无提升</span></div>
+      <div class="param-item"><span class="param-name">ON/OFF平衡</span><span>无干预</span></div>
+    </div>
+  </div>
+
+  <div class="vs-divider">VS</div>
+
+  <!-- BRIE镜片 -->
+  <div class="lens-panel brie">
+    <div class="lens-panel-title">🔵 BRIE镜片（微米透镜阵列）</div>
+    <div class="ray-diagram">
+      <svg width="320" height="280" viewBox="0 0 320 280">
+        <!-- 镜片 -->
+        <ellipse cx="160" cy="60" rx="100" ry="12" fill="none" stroke="#1565C0" stroke-width="3"/>
+        <!-- 微透镜阵列示意 -->
+        <circle cx="110" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <circle cx="125" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <circle cx="140" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <circle cx="155" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <circle cx="170" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <circle cx="185" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <circle cx="200" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <circle cx="215" cy="60" r="4" fill="#1565C0" opacity="0.5"/>
+        <text x="160" y="40" font-size="11" fill="#1565C0" text-anchor="middle" font-weight="bold">BRIE镜片（微透镜阵列）</text>
+        <!-- 成像光（蓝色，70%） -->
+        <line x1="60" y1="10" x2="120" y2="50" stroke="#42A5F5" stroke-width="2.5" stroke-dasharray="6"/>
+        <line x1="160" y1="5" x2="160" y2="48" stroke="#42A5F5" stroke-width="2.5" stroke-dasharray="6"/>
+        <line x1="120" y1="72" x2="160" y2="240" stroke="#42A5F5" stroke-width="2.5"/>
+        <line x1="160" y1="72" x2="160" y2="240" stroke="#42A5F5" stroke-width="2.5"/>
+        <!-- 环境光（橙色，散射，~30%透镜区） -->
+        <line x1="260" y1="10" x2="200" y2="50" stroke="#FF9800" stroke-width="2.5" stroke-dasharray="6"/>
+        <line x1="200" y1="72" x2="120" y2="240" stroke="#FF9800" stroke-width="2.5"/>
+        <line x1="140" y1="72" x2="100" y2="240" stroke="#FF9800" stroke-width="2" opacity="0.6"/>
+        <line x1="170" y1="72" x2="210" y2="240" stroke="#FF9800" stroke-width="2" opacity="0.6"/>
+        <!-- 视网膜 -->
+        <ellipse cx="160" cy="252" rx="50" ry="20" fill="none" stroke="#E65100" stroke-width="2.5"/>
+        <text x="160" y="256" font-size="9" fill="#E65100" text-anchor="middle">视网膜（照度提升）</text>
+        <!-- 标注 -->
+        <text x="40" y="200" font-size="10" fill="#FF9800" font-weight="bold">环境光</text>
+        <text x="40" y="215" font-size="10" fill="#FF9800">~30%</text>
+        <text x="40" y="230" font-size="9" fill="#999">散射/弥散</text>
+        <text x="260" y="140" font-size="10" fill="#42A5F5" font-weight="bold">成像光</text>
+        <text x="260" y="155" font-size="10" fill="#42A5F5">~70%</text>
+        <text x="260" y="170" font-size="9" fill="#999">直接透射</text>
+      </svg>
+    </div>
+    <div class="param-list">
+      <div class="param-item"><span class="param-name">功能</span><span>矫正屈光 + 提升背景照度</span></div>
+      <div class="param-item"><span class="param-name">光线处理</span><span>70%成像 + 30%环境</span></div>
+      <div class="param-item"><span class="param-name">背景照度</span><span style="color:#1565C0;font-weight:bold;">显著提升</span></div>
+      <div class="param-item"><span class="param-name">ON/OFF平衡</span><span style="color:#1565C0;font-weight:bold;">趋向恢复</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 微透镜阵列参数 -->
+<div class="detail-section">
+  <div class="detail-title">🔬 微米透镜阵列参数详情</div>
+  <div class="detail-grid">
+    <div class="detail-card">
+      <div class="detail-card-title">微透镜尺寸</div>
+      <div class="detail-card-value">~10 μm</div>
+      <div class="detail-card-unit">直径 / 远低于视觉分辨阈值</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-card-title">团簇排列</div>
+      <div class="detail-card-value">5×5</div>
+      <div class="detail-card-unit">25个微透镜/团簇 | 团簇直径 ~150 μm</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-card-title">面积占比</div>
+      <div class="detail-card-value">~14%</div>
+      <div class="detail-card-unit">镜片总面积 | 透光率 ≥95%</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-card-title">微透镜深度</div>
+      <div class="detail-card-value">~30 μm</div>
+      <div class="detail-card-unit">微透镜凸起高度</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-card-title">材料</div>
+      <div class="detail-card-value">PC</div>
+      <div class="detail-card-unit">折射率 1.60 | Abbe 30</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-card-title">伪随机分布</div>
+      <div class="detail-card-value">✅</div>
+      <div class="detail-card-unit">打破规则间距，避免衍射图案</div>
+    </div>
+  </div>
+
+  <div class="diff-section">
+    <div class="diff-title">⚡ 与DOT镜片的核心区别</div>
+    <div class="diff-text">
+      <strong>DOT镜片</strong>（SightGlass Vision/尼康控优点）：通过<strong>降低中心视力对比度</strong>，减少OFF通路过度激活信号 → 机制为"信号衰减"<br>
+      <strong>BRIE镜片</strong>（高境光）：通过<strong>提升视网膜背景照度</strong>，恢复ON/OFF统计平衡 → 机制为"信号恢复"<br><br>
+      简言之：DOT是在下游"降噪"，BRIE是在上游"补光"。两者靶向ON/OFF平衡但原理完全不同。BRIE镜片的微透镜将部分成像光转化为弥散的环境光，在不破坏中心视力图像质量的前提下提升视网膜背景照度，从而使RSBI趋向1.0。
+    </div>
+  </div>
+</div>
+
+<div class="footer">Lens parameters are based on patent specifications. BRIE lens efficacy has not been independently verified by randomized controlled trials. Optical paths are schematic.</div>
+
+</body>
+</html>

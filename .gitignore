@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Obsidian
+*.bak
+*.backup*
+*_backup*
+*.bak2
+
+# Temporary files
+*.tmp
+*.log
+
+# Large generated figures (in subdirectories)
+# figures/blog*.html
