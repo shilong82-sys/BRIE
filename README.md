@@ -11,19 +11,24 @@
 ## BRIE 的双重含义
 
 **1. 理论假说**
+
 > **基线视网膜照度平衡假说 / Baseline Retinal Illumination Equilibrium Hypothesis**
+>
 > 近视是成像光与背景环境光长期失耦合导致的视网膜统计稳态偏移
 
 **2. 干预技术**
+
 > **本底视网膜照度提升技术 / Baseline Retinal Illumination Elevation (BRIE) Technology**
+>
 > 通过提高环境光比例，恢复ON/OFF通路的1:1平衡状态
 
 ---
 
 ## 理论机制链条
 
-> 成像光与背景光失耦合（RID） → 视锥暗噪声正向偏移（Choi 2008） → 基线偏移型ON激活
-> → ON/OFF通路失衡（RSBI<1） → 脉络膜变薄（Aleman 2018） → 巩膜重塑（Zhou 2021） → 眼轴增长
+> 成像光与背景光失耦合（RID） → 视锥暗噪声正向偏移（Choi 2008） → 基线偏移型ON激活 → ON/OFF通路失衡（RSBI<1） → 脉络膜变薄（Aleman 2018） → 巩膜重塑（Zhou 2021） → 眼轴增长
+
+---
 
 ## 关键干预手段
 
